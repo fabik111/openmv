@@ -123,14 +123,6 @@ jobs:
     - name: '📦 Package firmware'
       run: source tools/ci.sh && ci_package_firmware_development
 
-    - name: '🧹 Delete old release'
-      uses: dev-drprasad/delete-tag-and-release@v0.2.0
-      with:
-        delete_release: true
-        tag_name: development
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     - name: "✏️ Generate release changelog"
       id: changelog
       uses: mikepenz/release-changelog-builder-action@v3
